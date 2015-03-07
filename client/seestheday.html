@@ -1,0 +1,29 @@
+<head><title>Sees the Day</title></head>
+
+<body> 
+{{> dayview}}
+</body>
+
+<template name="dayview">
+<h1>Sees The Day</h1>
+{{> calendarview}}
+{{> taskview}}
+</template>
+
+<template name="calendarview">
+<ul id="test-list">
+{{#each calendar}}
+<li> 
+<div>{{description}}</div>
+</li>
+{{/each}}
+</ul>
+</template>
+
+<template name="taskview">
+{{> fullcalendar defaultView='agendaweek'}}
+{{#each task}}
+<div>{{description}}</div>
+{{/each}}
+</template>
+
